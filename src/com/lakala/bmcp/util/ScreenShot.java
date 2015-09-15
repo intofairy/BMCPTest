@@ -42,7 +42,7 @@ public class ScreenShot {
 	 * @return 
 	 * @throws IOException
 	 */
-	//页面上个别元素的截图
+	//页面上指定元素的截图
 	public static File createElementImage(WebElement webElement,WebDriver driver) {
 		createDirectory(DEFAULTSAVEDPATH);
 		

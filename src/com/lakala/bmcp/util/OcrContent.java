@@ -8,12 +8,11 @@ import java.io.IOException;
 
 public class OcrContent {
 	
-	public static String runTesseract(String CaptchaPicFile,String oututTxtFile) throws Exception{
-		
-	
+	//∂‘Õº∆¨÷¥––OCR
+	public static String runTesseract(String CaptchaPicFile,String outputTxtFile) throws Exception{
 	Runtime rt = Runtime.getRuntime();
-	rt.exec("cmd.exe /C \"C://Program Files (x86)/Tesseract-OCR/tesseract.exe\" "+ CaptchaPicFile+" "+ oututTxtFile + " digits");
-    return oututTxtFile;
+	rt.exec("cmd.exe /C \"C://Program Files (x86)/Tesseract-OCR/tesseract.exe\" "+ CaptchaPicFile+" "+ outputTxtFile + " digits");
+    return outputTxtFile;
 	}
 	
 	
