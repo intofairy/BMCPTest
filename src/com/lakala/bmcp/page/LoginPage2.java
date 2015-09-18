@@ -19,17 +19,17 @@ import com.lakala.bmcp.util.ClearImageHelper;
 import com.lakala.bmcp.util.OcrContent;
 import com.lakala.bmcp.util.ScreenShot;
 
-public class LoginPage  {
+public class LoginPage2  {
 	
 	
-	private static WebDriver driver = null;
+	protected static WebDriver driver = null;
 	//私有化构造函数
-	private LoginPage(){
+	protected LoginPage2(){
 	}
 	//实例
-	private static LoginPage loginPage = new LoginPage(); 
+	private static LoginPage2 loginPage = new LoginPage2(); 
 	//返回该同一个实例
-	public static LoginPage getInstance(WebDriver dr){
+	public static LoginPage2 getInstance(WebDriver dr){
 		driver = dr;
 	    ElementLocatorFactory finder = new AjaxElementLocatorFactory(driver,120);
 	    PageFactory.initElements(finder, loginPage);
@@ -99,22 +99,5 @@ public class LoginPage  {
 		findPasswordBack.click();
 	}
 	
-	
-	
-	public static void main(String args[]) throws Exception {
-		FirefoxProfile profile = new ProfilesIni().getProfile("default");
-		JavaSendKey jsk = new JavaSendKey();
-		Thread t1 = new Thread(jsk);
-		
-		WebDriver driver = new FirefoxDriver(profile);
-		t1.start();
-		driver.get("https://10.7.111.153:9443/");
-		
-		LoginPage lp=LoginPage.getInstance(driver);
-		lp.getCaptcha();
-		//String yanzhengma=lp.getCaptcha();
-//		System.out.println(yanzhengma);
-		driver.quit();
-		return;
-	}
+
 }
